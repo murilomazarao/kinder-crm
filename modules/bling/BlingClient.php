@@ -1,3 +1,5 @@
+<?
+
 class BlingClient {
 
 private $token;
