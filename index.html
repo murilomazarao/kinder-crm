@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinderplay OS</title>
+  <link rel="icon" type="image/png" href="/assets/logo-kinderplay-icone.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0f75bc" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: {
+              DEFAULT: "hsl(var(--primary))",
+              foreground: "hsl(var(--primary-foreground))",
+            },
+            secondary: {
+              DEFAULT: "hsl(var(--secondary))",
+              foreground: "hsl(var(--secondary-foreground))",
+            },
+            destructive: {
+              DEFAULT: "hsl(var(--destructive))",
+              foreground: "hsl(var(--destructive-foreground))",
+            },
+            muted: {
+              DEFAULT: "hsl(var(--muted))",
+              foreground: "hsl(var(--muted-foreground))",
+            },
+            accent: {
+              DEFAULT: "hsl(var(--accent))",
+              foreground: "hsl(var(--accent-foreground))",
+            },
+            popover: {
+              DEFAULT: "hsl(var(--popover))",
+              foreground: "hsl(var(--popover-foreground))",
+            },
+            card: {
+              DEFAULT: "hsl(var(--card))",
+              foreground: "hsl(var(--card-foreground))",
+            },
+          },
+          borderRadius: {
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            lg: "var(--radius)",
+            md: "calc(var(--radius) - 2px)",
+            sm: "calc(var(--radius) - 4px)",
+          },
+          boxShadow: {
+            'glow': '0 0 20px -3px rgba(168, 85, 247, 0.4)',
+            'premium': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    :root {
+      /* Light Theme Refined - High Contrast */
+      --background: 210 40% 98%;
+      --foreground: 222 47% 11%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222 47% 11%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222 47% 11%;
+
+      --primary: 270 95% 60%;
+      /* Slightly darker purple for light mode */
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222 47% 11.2%;
+
+      --muted: 210 40% 94%;
+      --muted-foreground: 215.4 16.3% 40%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222 47% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 85%;
+      --input: 214.3 31.8% 85%;
+      --ring: 270 95% 60%;
+
+      --radius: 1rem;
+    }
+
+    .dark {
+      /* Dark Theme Premium Purple Void */
+      --background: 260 40% 2%;
+      /* Ultra Dark Purple-Black */
+      --foreground: 210 40% 98%;
+
+      --card: 260 40% 4%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 260 40% 3%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 270 95% 66%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 260 30% 10%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 260 30% 8%;
+      --muted-foreground: 260 15% 65%;
+
+      --accent: 270 60% 15%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 260 30% 12%;
+      --input: 260 30% 12%;
+      --ring: 270 95% 66%;
+    }
+
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Custom Scrollbar Refined */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.1);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary) / 0.4);
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+    }
+
+    /* Selection Color */
+    ::selection {
+      background: hsl(var(--primary) / 0.3);
+      color: white;
+    }
+
+    /* Smooth Interactivity */
+    * {
+      scroll-behavior: smooth;
+    }
+
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Active Item Pulse */
+    @keyframes active-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+      }
+
+      50% {
+        box-shadow: 0 0 35px rgba(168, 85, 247, 0.3);
+      }
+    }
+
+    .animate-active-pulse {
+      animation: active-pulse 3s infinite ease-in-out;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@dnd-kit/core": "https://aistudiocdn.com/@dnd-kit/core@^6.3.1",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "@dnd-kit/sortable": "https://aistudiocdn.com/@dnd-kit/sortable@^10.0.0",
+    "zustand": "https://aistudiocdn.com/zustand@^5.0.9",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
+    "@dnd-kit/utilities": "https://aistudiocdn.com/@dnd-kit/utilities@^3.2.2"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

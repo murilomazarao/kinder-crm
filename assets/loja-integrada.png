@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content="Loja Integrada" />
+    <meta name="robots" content="index, follow" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preconnect" href="https://cdn.awsli.com.br" /><style id="root-theme-style">:root {
+}</style>
+ <script type="text/javascript">
+   window.li_events_ctx = {"env":"production","context":{"environment":"production","app":"dot-render","theme":"buscaintegrada-dev-20260128-ewyt","abtest_theme":null},"location":{"type":"home","path":"/","querystring":""},"store":{"id":2490734,"name":"buscaintegrada","test_account":false,"li_search":true},"product":null};
+ </script>
+ <script defer src="https://cdn.awsli.com.br/public/render/static/prod/events/li-metrics.min.js" fetchpriority="low"></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="i-6Iuyg2vSb5oClqO6-Ggt62k1RrqbYoW-w17gt7juU" />
+<meta name="google-adsense-account" content="ca-pub-7551430882444225">
+<title>Busca Integrada</title>
+<link rel="icon" href="https://lojaintegrada.com.br/favicon.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+<script defer src="https://unpkg.com/alpinejs"></script>
+<script defer src="https://cdn.awsli.com.br/public/render/theme_assets/2490/2490734/buscaintegrada-dev-20260128-ewyt/htmx207.min.js"></script>
+<script src="https://unpkg.com/typed.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/base/rootscrollgutter.css,npm/daisyui@5/base/scrollbar.css,npm/daisyui@5/base/rootcolor.css,npm/daisyui@5/base/rootscrolllock.css,npm/daisyui@5/base/reset.css,npm/daisyui@5/base/svg.css,npm/daisyui@5/base/properties.css,npm/daisyui@5/components/modal.css,npm/daisyui@5/theme/light.css" rel="stylesheet" type="text/css" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        boxShadow: {
+          card: '0px 15px 30px rgba(0, 0, 0, 0.1)',
+        },
+        colors: {
+          'base-1': '#ffffff',
+          'base-2': '#f8f8f9',
+          'base-3': '#e8e9eb',
+          'inverted-1': '#371e56',
+          'inverted-2': '#525b65',
+          'on-base-2': '#525b65',
+          'on-base-3': '#a0a8b6',
+          primary: '#2bc4c3',
+          'primary-dark': '#0c9898',
+          'primary-light': '#e4f3f3',
+          transparent: 'transparent',
+        },
+        fontFamily: {
+          sans: 'Inter, sans-serif',
+        },
+        fontSize: {
+          f2: '2.25rem',
+          f3: '1.5rem',
+          f4: '1.25rem',
+          f5: '1rem',
+          f6: '.875rem',
+          f7: '.75rem',
+          f8: '.625rem',
+        },
+        letterSpacing: {
+          3: '-0.01875rem',
+          4: '-0.025rem',
+          5: '-0.03125rem',
+        },
+        size: {
+          product: '335px',
+          shelf: '185px',
+          'shelf-m': '135px',
+        },
+      }
+    }
+  }
+</script>
+<style type="text/tailwindcss">
+  html {
+    @apply h-full;
+  }
+  
+  body {
+    @apply flex flex-col h-full text-f6 leading-6 tracking-4 text-inverted-1;
+  }
+
+  /* Menu dropdown simples */
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      z-index: 10;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+      display: block;
+  }
+</style>
+<!-- END OF HEAD -->
+</head>
+<body>
+    <!-- START OF BODY --><header class="bg-white shadow">
+    <div class="flex lg:grid grid-cols-4 gap-x-4 w-full max-w-7xl mx-auto px-5 py-5 lg:py-10">
+        <div class="flex items-center shrink-0">
+          <a href="/">
+            <picture>
+              <source
+                srcSet="https://cdn.awsli.com.br/2490/2490734/arquivos/busca-integrada.svg"
+                media="(min-width: 1024px)"
+                width="236px"
+                height="36px"
+              />
+              <img
+                src="https://cdn.awsli.com.br/2490/2490734/arquivos/logo.svg"
+                width="24px"
+                height="24px"
+                alt="Busca Integrada"
+              />
+            </picture>
+          </a>
+        </div> 
+        <div class="col-span-3 w-full">
+          <form action="/buscar" class="relative flex gap-x-4 w-full text-f5">
+            <input
+              class="w-full px-6 lg:px-10 py-2 lg:py-4 border border-card-stroke rounded-3xl outline-none bg-transparent text-f6 lg:text-f4 text-inverted-2"
+              placeholder="O que você procura?"
+              name="q"
+              value=""
+            />
+            <button class="absolute top-1/2 right-5 lg:right-6 -translate-y-1/2">
+              <svg class="size-4 lg:size-6 fill-primary-dark"><use xlink:href="/static/img/fontawesome-solid.svg#magnifying-glass"></use></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+</header><main class="flex-grow">
+<section class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Novidades</h2>
+        
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/u2-boy-2026-02-12-19-49-15/2928594/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2928/2928594/produto/398759490/ni00odaylmpwzwc-on7mmrbdx9.jpeg"
+                width="200px"
+                height="200px"
+                alt="U2 - Boy"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">U2 - Boy</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 150,00</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Doze Cascavel</a>
+        </div>
+        <a href="/u2-boy-2026-02-12-19-49-15/2928594/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/catedral-de-sao-basilio-piececool-3d/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391045400/91fdba5e4f7b0fa9d5a9883affc3b5c5-01zo2uzosj.png"
+                width="200px"
+                height="200px"
+                alt="Catedral de S&#xE3;o Bas&#xED;lio - Piececool-3D"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Catedral de S&#xE3;o Bas&#xED;lio - Piececool-3D</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 354,37</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/catedral-de-sao-basilio-piececool-3d/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/figure-oscar-knight-of-astora-heroes-of-lordran-dark-souls/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391050417/3396a234d9f00c913e368db120a3076c-tbriyiykqk.jpg"
+                width="200px"
+                height="200px"
+                alt="Figure Oscar Knight of Astora Heroes Of Lordran Dark Souls"
+                loading="lazy"
+                />
+        </a>
+        
+        <span class="absolute top-0 right-0 bg-yellow-400 text-xs font-semibold px-2 py-1 rounded text-white">-20%
+        </span>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Figure Oscar Knight of Astora Heroes Of Lordran Dark Souls</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <span class="text-gray-400 line-through text-sm">R$ 205,12</span>
+            
+            <div class="text-xl font-bold text-primary">R$ 163,92</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/figure-oscar-knight-of-astora-heroes-of-lordran-dark-souls/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/boneco-kratos-god-of-war/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391044953/1c515bdfc742b08ac39f685e58835cde-8vh37g8n53.jpg"
+                width="200px"
+                height="200px"
+                alt="Boneco Kratos God Of War"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Boneco Kratos God Of War</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 177,14</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/boneco-kratos-god-of-war/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/figure-blood-bishop-diablo-iv-mcfarlane-toys/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391048504/d9226c10bd512a5328943d0ba7e993bf-2pyyzxn1i4.png"
+                width="200px"
+                height="200px"
+                alt="Figure Blood Bishop Diablo IV - McFarlane Toys"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Figure Blood Bishop Diablo IV - McFarlane Toys</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 456,98</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/figure-blood-bishop-diablo-iv-mcfarlane-toys/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/iqet5aytb-/conjunto-batente-e-porta-corta-fogo-p90-2026-01-30-18-23-15/2920692/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2920/2920692/produto/396127127/3-zd2eg2rmyh.png"
+                width="200px"
+                height="200px"
+                alt="Conjunto Batente e Porta Corta Fogo P90 - 890mm x 2100mm x 50mm"
+                loading="lazy"
+                />
+        </a>
+        
+        <span class="absolute top-0 right-0 bg-yellow-400 text-xs font-semibold px-2 py-1 rounded text-white">-21%
+        </span>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Conjunto Batente e Porta Corta Fogo P90 - 890mm x 2100mm x 50mm</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <span class="text-gray-400 line-through text-sm">R$ 2.000,00</span>
+            
+            <div class="text-xl font-bold text-primary">R$ 1.571,97</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">SECOTRIN SHOP</a>
+        </div>
+        <a href="/iqet5aytb-/conjunto-batente-e-porta-corta-fogo-p90-2026-01-30-18-23-15/2920692/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/various-loco-motivas-trilha-sonora-internacional-2026-02-05-15-17-34/2928594/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2928/2928594/produto/397775707/lteyodquanblzw-lq2fpxih69.jpeg"
+                width="200px"
+                height="200px"
+                alt="Various - Loco-Motivas (Trilha Sonora Internacional)"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Various - Loco-Motivas (Trilha Sonora Internacional)</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 45,00</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Doze Cascavel</a>
+        </div>
+        <a href="/various-loco-motivas-trilha-sonora-internacional-2026-02-05-15-17-34/2928594/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/lixeira-automatica-inteligente-com-sensor-18-litros/2933335/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2933/2933335/produto/397800465/4e16af80b6df21880a51f14e4b247baf-doyex7ioxs.jpg"
+                width="200px"
+                height="200px"
+                alt="Lixeira Autom&#xE1;tica Inteligente Com Sensor 18 Litros"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Lixeira Autom&#xE1;tica Inteligente Com Sensor 18 Litros</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 315,24</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">INFINIT8 HOME</a>
+        </div>
+        <a href="/lixeira-automatica-inteligente-com-sensor-18-litros/2933335/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/dinossauro-velociraptor-jurassic-world-mattel/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391046189/840dcebdceaf8cb1e9deb01352772209-isn6tsaqht.png"
+                width="200px"
+                height="200px"
+                alt="Dinossauro Velociraptor Jurassic World - Mattel"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Dinossauro Velociraptor Jurassic World - Mattel</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 354,37</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/dinossauro-velociraptor-jurassic-world-mattel/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/action-figure-yuji-itadori-16-jujutsu-kaisen-original-three-zero/2922671/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2922/2922671/produto/397821438/c9df93a3336706838d36fc6f16c59c6f-s5g3p9fin0.jpg"
+                width="200px"
+                height="200px"
+                alt="Action Figure Yuji Itadori 1/6 Jujutsu Kaisen - Original Three Zero"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Action Figure Yuji Itadori 1/6 Jujutsu Kaisen - Original Three Zero</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 1.647,36</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Nord Figure</a>
+        </div>
+        <a href="/action-figure-yuji-itadori-16-jujutsu-kaisen-original-three-zero/2922671/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/reparo-alto-falante-e18-target-bass-3k-1500w-rms-8-ohms/2940126/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2940/2940126/produto/398775951/9f5bb2600d67abe9a561faf44f7ceb6c-1a27vz3dgc.jpg"
+                width="200px"
+                height="200px"
+                alt="Reparo Alto-Falante E18 Target Bass 3K - 1.500W RMS - 8 Ohms"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Reparo Alto-Falante E18 Target Bass 3K - 1.500W RMS - 8 Ohms</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 597,97</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Distribuidora CED</a>
+        </div>
+        <a href="/reparo-alto-falante-e18-target-bass-3k-1500w-rms-8-ohms/2940126/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/action-figure-the-fly-universal-horror-legend-mego/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391043471/0b33718c0940f960db9c42b311ab1675-5qgvaomcxq.png"
+                width="200px"
+                height="200px"
+                alt="Action Figure The Fly Universal Horror Legend - MEGO"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Action Figure The Fly Universal Horror Legend - MEGO</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 419,66</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/action-figure-the-fly-universal-horror-legend-mego/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/pink-floyd-hits/2928594/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2928/2928594/produto/398666395/ns5qcgvn-a6v4uik427.jpeg"
+                width="200px"
+                height="200px"
+                alt="Pink Floyd - Hits"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Pink Floyd - Hits</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 145,00</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Doze Cascavel</a>
+        </div>
+        <a href="/pink-floyd-hits/2928594/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/action-figure-april-oneil-tmnt-neca/2923338/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2923/2923338/produto/391040858/97af4a759f0f9a74529bf6b8b6cce1a2-300sn79l05.png"
+                width="200px"
+                height="200px"
+                alt="Action Figure April O&#x27;Neil TMNT - NECA"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Action Figure April O&#x27;Neil TMNT - NECA</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 354,80</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Level Geek</a>
+        </div>
+        <a href="/action-figure-april-oneil-tmnt-neca/2923338/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/alcione-fogo-da-vida/2928594/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2928/2928594/produto/397764484/ms04mzmwlmpwzwc-fyd2e0n07y.jpeg"
+                width="200px"
+                height="200px"
+                alt="Alcione - Fogo Da Vida"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Alcione - Fogo Da Vida</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 60,00</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Doze Cascavel</a>
+        </div>
+        <a href="/alcione-fogo-da-vida/2928594/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/action-figure-loid-forger-father-of-the-family-bandai-shf/2922671/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2922/2922671/produto/397818060/b5134dd614aed385c4e7ae3950632103-tr4b4yhmt4.png"
+                width="200px"
+                height="200px"
+                alt="Action Figure Loid Forger Father Of The Family - Bandai SHF"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Action Figure Loid Forger Father Of The Family - Bandai SHF</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 455,24</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Nord Figure</a>
+        </div>
+        <a href="/action-figure-loid-forger-father-of-the-family-bandai-shf/2922671/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/tubo-de-cobre-para-pistola-tornador-de-ar-comprimido-sgcb/2912685/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2912/2912685/produto/387607237/ea489fa8cff65f268a54f5d8b9a00489-tdo3qecvfw.jpg"
+                width="200px"
+                height="200px"
+                alt="Tubo de Cobre para Pistola Tornador de Ar Comprimido - SGCB"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Tubo de Cobre para Pistola Tornador de Ar Comprimido - SGCB</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 55,90</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Rafael Senzi</a>
+        </div>
+        <a href="/tubo-de-cobre-para-pistola-tornador-de-ar-comprimido-sgcb/2912685/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/oculos-melissa-tortuga-feminino/2930264/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2930/2930264/produto/398688503/1115f622-a97a-4d64-9b63-6eaa1230bc56-5qqpj604ph.png"
+                width="200px"
+                height="200px"
+                alt="&#xD3;culos Melissa Tortuga - Feminino"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">&#xD3;culos Melissa Tortuga - Feminino</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 89,90</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">&#xD3;culos Vero</a>
+        </div>
+        <a href="/oculos-melissa-tortuga-feminino/2930264/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/grandha-fito-capillus-olive-shampoo-equilibrante-para-pontas-secas-e-raiz-oleosa-250ml/2914265/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2914/2914265/produto/395858171/olive-shampoo-1-photoroom-x9nzmjqk4j.png"
+                width="200px"
+                height="200px"
+                alt="Grandha Fito Capillus Olive Shampoo Equilibrante para Pontas Secas e Raiz Oleosa 250ml"
+                loading="lazy"
+                />
+        </a>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Grandha Fito Capillus Olive Shampoo Equilibrante para Pontas Secas e Raiz Oleosa 250ml</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <div class="text-xl font-bold text-primary">R$ 86,99</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">HS Cosm&#xE9;ticos</a>
+        </div>
+        <a href="/grandha-fito-capillus-olive-shampoo-equilibrante-para-pontas-secas-e-raiz-oleosa-250ml/2914265/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div><div class="bg-white rounded shadow p-4 hover-shadow">
+    <div class="relative">
+        <a href="/emaan-lattafa-eau-de-parfum-100ml-feminino/2917295/p">
+            <img
+                class="size-shelf-m lg:size-shelf object-contain"
+                src="https://cdn.awsli.com.br/200x200/2917/2917295/produto/398178446/emaan-lattafa-02-ud9e5d7o80.png"
+                width="200px"
+                height="200px"
+                alt="Emaan Lattafa Eau de Parfum - 100ml - Feminino"
+                loading="lazy"
+                />
+        </a>
+        
+        <span class="absolute top-0 right-0 bg-yellow-400 text-xs font-semibold px-2 py-1 rounded text-white">-40%
+        </span>
+        
+    </div>
+    <div class="mt-4">
+        <h3 class="font-medium text-gray-800 mb-2 h-12 overflow-hidden">Emaan Lattafa Eau de Parfum - 100ml - Feminino</h3>
+        
+        <div class="mt-3 min-h-[80px]">
+            
+            <span class="text-gray-400 line-through text-sm">R$ 499,90</span>
+            
+            <div class="text-xl font-bold text-primary">R$ 299,90</div>
+            
+        </div>
+        <div class="mb-4 text-xs text-gray-500">
+            Vendido por: <a href="#" class="text-primary hover:underline">Sheika Perfumes</a>
+        </div>
+        <a href="/emaan-lattafa-eau-de-parfum-100ml-feminino/2917295/p">
+            <button class="w-full bg-primary text-white py-2 rounded hover:bg-opacity-90">
+                Ver Detalhes
+            </button>
+        </a>
+    </div>
+</div>
+    </div>
+</section>
+
+<!-- Banner -->
+<section class="container mx-auto px-4 py-6">
+    <div class="rounded-lg overflow-hidden shadow">
+        <a href="https://www.lojaintegrada.com.br?utm_source=buscaintegrada" target="_blank" class="block">    
+            <img src="https://cdn.awsli.com.br/1200x300/2490/2490734/arquivos/bbea45a21b.png" alt="Loja Integrada" class="w-full h-auto">
+        </a>
+    </div>
+</section>
+</main><footer class="flex lg:items-center justify-between flex-col lg:flex-row gap-y-8 px-5 lg:px-20 py-10 bg-base-1">
+  <div class="flex flex-col gap-y-6">
+    <a href="https://lojaintegrada.com.br/?utm_source=buscaintegrada" target="_blank" rel="noreferrer">
+      <img
+        src="https://cdn.awsli.com.br/2490/2490734/arquivos/loja-integrada.svg"
+        width="215"
+        height="44"
+        alt="Loja Integrada"
+      />
+    </a>
+    <p class="leading-5 tracking-3 text-inverted-2">Feita por quem ama tecnologia,<br />gente e lojas virtuais &#128154;</p>
+  </div>
+  <div class="flex flex-col lg:flex-row gap-y-12">
+    <div class="flex gap-x-8 text-primary-dark">
+      <a href="https://www.instagram.com/lojaintegrada/" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#instagram"></use></svg></a>
+      <a href="https://www.linkedin.com/company/lojaintegrada/" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#linkedin-in"></use></svg></a>
+      <a href="https://www.facebook.com/lojaintegrada" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#facebook-f"></use></svg></a>
+      <a href="https://twitter.com/lojaintegrada" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#twitter"></use></svg></a>
+      <a href="https://www.youtube.com/c/LojaIntegradaBR-loja-virtual" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#youtube"></use></svg></a>
+      <a href="https://www.tiktok.com/@lojaintegrada" target="_blank" rel="noreferrer"><svg class="size-4 fill-current"><use xlink:href="/static/img/fontawesome-brands.svg#tiktok"></use></svg></a>
+    </div>
+    <div class="hidden lg:block w-px h-6 mx-12 bg-base-3"></div>
+    <div class="flex flex-col lg:flex-row gap-x-14 gap-y-6 tracking-3">
+      <a href="https://lojaintegrada.com.br/sobre/?utm_source=buscaintegrada" target="_blank" rel="noreferrer">Quem somos</a>
+      <a href="https://drive.google.com/file/d/1BWkUdi5Qfh416M51anpDsXJEjCneKaJa/view" target="_blank" rel="noreferrer">Termos de uso</a>
+      <a href="https://lojaintegrada.com.br/privacidade/?utm_source=buscaintegrada" target="_blank" rel="noreferrer">Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    <div
+      data-newsletter-popup
+      hx-get="/partial/newsletter/popup"
+      hx-select="[data-newsletter-popup]"
+      hx-trigger="load delay:2s once"
+      hx-swap="outerHTML"
+    ></div>
+  
+
+
+  <script defer src="https://cdn.awsli.com.br/public/render/theme_assets/2490/2490734/buscaintegrada-dev-20260128-ewyt/newslettersubscribe.webc.js"></script>
+
+ <script type="application/ld+json">
+   [{"@context":"https://schema.org","@type":"WebSite","name":"Busca Integrada","url":"https://www.buscaintegrada.com.br","potentialAction":[{"@type":"SearchAction","target":"https://www.buscaintegrada.com.br/buscar?q={search_term_string}","query-input":"required name=search_term_string"}]}]
+ </script><!-- END OF BODY -->
+</body>
+</html>

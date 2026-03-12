@@ -1,0 +1,26 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="379" height="422" viewBox="0 0 379 422" fill="none">
+<mask id="mask0_6275_5740" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="379" height="422">
+<rect x="0.511124" y="0.731445" width="377.68" height="420.336" rx="10.6639" fill="black"/>
+</mask>
+<g mask="url(#mask0_6275_5740)">
+<rect x="0.511124" y="0.731445" width="377.68" height="420.336" rx="10.6639" fill="black"/>
+<g opacity="0.85" filter="url(#filter0_f_6275_5740)">
+<path d="M-97.726 20.2273C-23.5578 -68.0351 -115.613 300.967 147.503 15.0653C220.401 74.1768 228.22 194.685 367.706 236.287C293.537 324.549 161.72 426.189 88.822 367.078C15.9242 307.966 -171.894 108.49 -97.726 20.2273Z" fill="#E53BC9" fill-opacity="0.64"/>
+</g>
+<g opacity="0.45" filter="url(#filter1_f_6275_5740)">
+<ellipse cx="662.436" cy="-158.497" rx="553.612" ry="514.932" transform="rotate(-148.181 662.436 -158.497)" fill="#501AF1" fill-opacity="0.73"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_6275_5740" x="-447.358" y="-326.391" width="1147.67" height="1043.67" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="166.304" result="effect1_foregroundBlur_6275_5740"/>
+</filter>
+<filter id="filter1_f_6275_5740" x="-145.436" y="-949.168" width="1615.74" height="1581.34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="132.323" result="effect1_foregroundBlur_6275_5740"/>
+</filter>
+</defs>
+<script xmlns="" id="vsc-settings-data">{"audioBoolean":true,"blacklist":"www.instagram.com\nx.com\nimgur.com\nteams.microsoft.com\nmeet.google.com","controllerButtonSize":14,"controllerOpacity":0.3,"defaultLogLevel":4,"displayKeyCode":86,"enabled":true,"forceLastSavedSpeed":false,"keyBindings":[{"action":"display","force":false,"key":86,"predefined":true,"value":0},{"action":"slower","force":false,"key":83,"predefined":true,"value":0.1},{"action":"faster","force":false,"key":68,"predefined":true,"value":0.1},{"action":"rewind","force":false,"key":90,"predefined":true,"value":10},{"action":"advance","force":false,"key":88,"predefined":true,"value":10},{"action":"reset","force":false,"key":82,"predefined":true,"value":1},{"action":"fast","force":false,"key":71,"predefined":true,"value":1.45},{"action":"mark","force":false,"key":77,"predefined":true,"value":0},{"action":"jump","force":false,"key":74,"predefined":true,"value":0}],"lastSpeed":1,"logLevel":3,"rememberSpeed":false,"startHidden":false}</script><script xmlns=""/></svg>
